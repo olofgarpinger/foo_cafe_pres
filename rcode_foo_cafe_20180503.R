@@ -87,24 +87,6 @@ vl_2016_ac70 %>%
   labs(x = "Time to Smågan (seconds)",
        y = "Time to Mora (seconds)")
 
-# The same plot with Bengt annotated
-# install.packages("ggrepel") needs to be run first!
-bengt = vl_2016 %>% 
-  filter(skiier_id == 4687) %>% 
-  mutate(name = "Bengt")
-p = vl_2016_ac70 %>%
-  ggplot(aes(x = smagan, y = mora)) + 
-  geom_point(aes(color = start_group), 
-             size = 2) +
-  labs(x = "Time to Smågan (seconds)",
-       y = "Time to Mora (seconds)")
-p + 
-  ggrepel::geom_label_repel(   # ggrepel needs to be installed: install.packages("ggrepel")
-    aes(label = name),
-    data = bengt,
-    point.padding = 0.3
-    )
-
 # Geometric objects - Smoothing
 vl_2016_ac70 %>% 
   ggplot(aes(x = smagan, y = mora)) + 
@@ -117,21 +99,13 @@ vl_2016_ac70 %>%
 # Smoothing without start group 5
 vl_wo_sg5 = vl_2016_ac70 %>% 
   filter(start_group != 5)
-q = vl_2016_ac70 %>% 
+vl_2016_ac70 %>% 
   ggplot(aes(x = smagan, y = mora)) + 
   geom_point(aes(color = start_group), 
              size = 2) +
   geom_smooth(data = vl_wo_sg5) +
   labs(x = "Time to Smågan (seconds)",
        y = "Time to Mora (seconds)")
-
-# With Bengt annotated
-q +
-  ggrepel::geom_label_repel(   # ggrepel needs to be installed: install.packages("ggrepel")
-    aes(label = name),
-    data = bengt,
-    point.padding = 0.3
-    )
 
 # Geometric objects - Box plot
 vl_2016 %>% 
@@ -154,11 +128,7 @@ vl_2016 %>%
                 binwidth = 900, 
                 lwd = 1.5) +
   labs(x = "Time to Mora (seconds)",
-       y = "Skiiers within 15 minute intervals") +
-  geom_vline(xintercept = 32328, 
-             lty = 2, 
-             lwd = 1.5, 
-             color = "black")
+       y = "Skiiers within 15 minute intervals")
 
 # Facets
 vl_2016 %>% 
