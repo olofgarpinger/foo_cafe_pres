@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1525248420988.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1291990740",
+    "id" : "7A86FECF",
+    "lastKnownWriteTime" : 1525246401,
+    "last_content_update" : 1525246401,
+    "path" : "C:/Users/olran/Knightec/Presentationer/Foo Café/foo_cafe_pres/rcode_foo_cafe_20180503.R",
+    "project_path" : "rcode_foo_cafe_20180503.R",
+    "properties" : {
+        "cursorPosition" : "7,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
