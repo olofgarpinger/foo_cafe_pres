@@ -50,6 +50,7 @@ vl_2016_summarise = summarise(vl_2016_group_by,
 
 ### The pipe %>%. Ctrl + Shift + M ###
 
+# Creating the same data frame as vl_2016_summarise using the pipe
 vl_2016 %>% 
   select(skiier_id, age_class, start_group, mora) %>% 
   filter(age_class == 70) %>% 
@@ -63,7 +64,7 @@ vl_2016 %>%
 ### Visualizations with ggplot2 ###
 
 # Geometric objects - Scatter plot
-vl_2016_ac70 = vl_2016 %>% filter(age_class == 70) 
+vl_2016_ac70 = vl_2016 %>% filter(age_class == 70)
 ggplot(data = vl_2016_ac70) + 
   geom_point(mapping = aes(x = smagan, y = mora), 
              size = 2) +
@@ -124,7 +125,7 @@ vl_2016 %>%
 # Geometric objects - Frequency polygons
 vl_2016 %>% 
   ggplot(aes(x = mora)) +
-  geom_freqpoly(aes(col = start_group), 
+  geom_freqpoly(aes(color = start_group), 
                 binwidth = 900, 
                 lwd = 1.5) +
   labs(x = "Time to Mora (seconds)",
